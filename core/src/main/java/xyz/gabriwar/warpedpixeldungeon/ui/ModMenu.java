@@ -1,8 +1,7 @@
 package xyz.gabriwar.warpedpixeldungeon.ui;
 
-import com.shatteredpixel.shatteredpixeldungeon.scenes.GameScene;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndOptions;
-import com.watabou.noosa.Game;
+import xyz.gabriwar.warpedpixeldungeon.scenes.GameScene;
+import xyz.gabriwar.warpedpixeldungeon.windows.WndOptions;
 
 public class ModMenu {
 
