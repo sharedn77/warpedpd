@@ -67,6 +67,7 @@ public class Toolbar extends Component {
 	private Tool btnWait;
 	private Tool btnSearch;
 	private Tool btnInventory;
+  private Tool btnMod;
 	private QuickslotTool[] btnQuick;
 	private SkillQuickslotTool[] btnSkills;
 	private SlotSwapTool btnSwap;
@@ -102,6 +103,13 @@ public class Toolbar extends Component {
 	protected void createChildren() {
 
 		add(btnSwap = new SlotSwapTool(128, 0, 21, 23));
+    add(btnMod = new Tool(0, 0, 22, 24) {
+    @Override
+    protected void onClick() {
+        super.onClick();
+        ModMenu.show();
+    }
+});
 
 		btnSkills = new SkillQuickslotTool[QuickSlot.SIZE];
 		btnQuick = new QuickslotTool[QuickSlot.SIZE];
