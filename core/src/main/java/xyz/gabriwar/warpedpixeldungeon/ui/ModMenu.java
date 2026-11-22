@@ -4,7 +4,7 @@ import xyz.gabriwar.warpedpixeldungeon.Dungeon;
 import xyz.gabriwar.warpedpixeldungeon.scenes.GameScene;
 import xyz.gabriwar.warpedpixeldungeon.windows.WndOptions;
 import xyz.gabriwar.warpedpixeldungeon.items.Item;
-import xyz.gabriwar.warpedpixeldungeon.items.ArcaneCatalyst;
+import xyz.gabriwar.warpedpixeldungeon.items.EnergyCrystal;
 import xyz.gabriwar.warpedpixeldungeon.items.potions.PotionOfStrength;
 import xyz.gabriwar.warpedpixeldungeon.items.potions.PotionOfExperience;
 import xyz.gabriwar.warpedpixeldungeon.items.scrolls.ScrollOfUpgrade;
@@ -32,7 +32,7 @@ public class ModMenu {
                 } else if (index == 2) {
                     for (int i = 0; i < 3; i++) giveItem(new PotionOfExperience());
                 } else if (index == 3) {
-                    for (int i = 0; i < 5; i++) giveItem(new ArcaneCatalyst());
+                    for (int i = 0; i < 5; i++) giveItem(new EnergyCrystal());
                 } else if (index == 4) {
                     for (int i = 0; i < 3; i++) giveItem(new ScrollOfTransmutation());
                 }
