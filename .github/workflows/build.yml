@@ -28,5 +28,6 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: warpedpd-mod-apk
-          path: android/build/outputs/apk/debug/*.apk
+        name: warpedpd-debug-apk
+        path: "**/build/outputs/apk/debug/*.apk"
+        if-no-files-found: warn
