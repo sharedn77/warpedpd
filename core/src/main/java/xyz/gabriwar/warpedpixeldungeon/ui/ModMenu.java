@@ -26,26 +26,28 @@ public class ModMenu {
             @Override
             protected void onSelect(int index) {
                 if (index == 0) {
-                    for (int i = 0; i < 5; i++) giveItem(new ScrollOfUpgrade());
+                    giveItem(new ScrollOfUpgrade().quantity(5));
                 } else if (index == 1) {
-                    for (int i = 0; i < 3; i++) giveItem(new PotionOfStrength());
+                    giveItem(new PotionOfStrength().quantity(3));
                 } else if (index == 2) {
-                    for (int i = 0; i < 3; i++) giveItem(new PotionOfExperience());
+                    giveItem(new PotionOfExperience().quantity(3));
                 } else if (index == 3) {
-                    for (int i = 0; i < 5; i++) giveItem(new EnergyCrystal());
+                    giveItem(new EnergyCrystal().quantity(5));
                 } else if (index == 4) {
-                    for (int i = 0; i < 3; i++) giveItem(new ScrollOfTransmutation());
-                }
-                if (index >= 0 && index <= 4) {
-                    GameScene.show(new WndOptions("Berhasil!", "Item udah masuk tas!", "OK", null));
+                    giveItem(new ScrollOfTransmutation().quantity(3));
                 }
             }
         });
     }
 
     private static void giveItem(Item item) {
-        if (!item.collect()) {
-            Dungeon.level.drop(item, Dungeon.hero.pos);
+        try {
+            if (!Dungeon.hero.belongings.backpack.collect(item)) {
+                Dungeon.level.drop(item, Dungeon.hero.pos);
+            }
+            Item.updateQuickslot();
+        } catch (Exception e) {
+            // biar gak force close kalau gagal
         }
     }
 }
