@@ -42,12 +42,11 @@ public class ModMenu {
 
     private static void giveItem(Item item) {
         try {
-            if (!Dungeon.hero.belongings.backpack.collect(item)) {
+            if (!item.collect()) {
                 Dungeon.level.drop(item, Dungeon.hero.pos);
             }
             Item.updateQuickslot();
         } catch (Exception e) {
-            // biar gak force close kalau gagal
         }
     }
 }
