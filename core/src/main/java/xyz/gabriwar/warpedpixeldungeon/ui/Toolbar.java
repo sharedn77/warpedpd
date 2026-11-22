@@ -110,6 +110,7 @@ public class Toolbar extends Component {
         ModMenu.show();
     }
 });
+btnMod.frame(88, 0, 22, 24);
 
 		btnSkills = new SkillQuickslotTool[QuickSlot.SIZE];
 		btnQuick = new QuickslotTool[QuickSlot.SIZE];
@@ -750,6 +751,7 @@ public class Toolbar extends Component {
 				for(Button slot : btnQuick){
 					if (slot.visible) toolbarWidth += slot.width();
 				}
+         if (btnMod.visible) toolbarWidth += btnMod.width()-2;
 				if (btnSwap.visible) toolbarWidth += btnSwap.width()-2;
 				right = (width + toolbarWidth)/2;
 
@@ -771,6 +773,10 @@ public class Toolbar extends Component {
 				
 				break;
 		}
+
+       if (btnMod.visible){
+         btnMod.setPos(btnSwap.left() - btnMod.width() - 2, btnSwap.top());
+   }
 
 		if (shift > 0){
 			shift /= 2; //we want to center;
@@ -797,6 +803,9 @@ public class Toolbar extends Component {
 			if (btnSwap.visible){
 				btnSwap.setPos( right - btnSwap.right(), y+3);
 			}
+     if (btnMod.visible){
+       btnMod.setPos( right - btnSwap.right() - btnMod.width() - 2, y+3);
+      }
 
 		}
 
