@@ -109,7 +109,7 @@ public class WndGame extends Window {
 		}
 
 		// Debug menu (debug builds, or unlocked via the credits easter egg)
-		if (DeviceCompat.isDebug() || WPDSettings.debugUnlocked()) {
+		if (false){
 			addButton(curBtn = new RedButton("Debug") {
 				@Override
 				protected void onClick() {
