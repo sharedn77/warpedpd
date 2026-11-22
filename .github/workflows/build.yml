@@ -24,8 +24,11 @@ jobs:
       - name: Build Debug APK
         run: ./gradlew :android:assembleDebug
 
+      - name: Find APK
+        run: find . -name "*.apk" -o -name "*.aab" | head -n 50
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: warpedpd-debug-apk
-          path: "**/build/outputs/apk/debug/*.apk"
+          path: "**/*.apk"
